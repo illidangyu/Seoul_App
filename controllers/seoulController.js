@@ -25,6 +25,10 @@ module.exports = (app)=>{
 			let json_data= JSON.parse(data)
 			let data_row = json_data.vtrHospitalInfo.row
 			let data_count = json_data.vtrHospitalInfo.list_total_count
+			
+			console.log(data_row)
+			console.log(data_count)
+			
 			res.render('index',{body:'pet',seoul:data_row})
 			
 		})

@@ -1,0 +1,33 @@
+doctype html
+html(lang='ko')
+	
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width,initial-scale=1')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		title 네이버 지도 표시
+		script(src='https://openapi.map.naver.com/openapi/v3/maps.js?clientId=11R8Dy3ucVaAbzwUOo1a')
+
+	style.
+		#naverMap{
+			width:100%;
+			height:400px;
+			}
+
+body
+	div#naverMap
+	
+script.
+	
+	var mapConfig = { 
+		center : new naver.maps.LatLng(#{point.y},#{point.x}), 
+		zoom:20
+	}
+	
+	var marker = new naver.maps.Marker({
+		position : new naver.maps.LatLng(#{point.y},#{point.x}),
+		map : new naver.maps.Map('naverMap',mapConfig)
+		
+	})
+	
+	

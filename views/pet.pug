@@ -1,4 +1,4 @@
-table.w3-table.w3-all
+table.w3-table.w3-all.w3-hover
 	tr
 		th 병원이름
 		th 전화번호
@@ -8,7 +8,9 @@ table.w3-table.w3-all
 			td(colspan=3) 데이터 없다
 	else
 		each item, index in seoul
-			tr
+			tr.map(data-x= item.XCODE, data-y=item.YCODE)
 				td= item.NM
 				td= item.TEL
-				td= item.ADDR
+				td
+					- var map_url = '/naver/map/'+item.ADDR
+					a(href=map_url)= item.ADDR
